@@ -1,0 +1,2050 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso Online Ultrassom Transvaginal - Dra. Roberta Severiano</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --gold: #c9a961;
+        --gold-dark: #a68a4d;
+        --black: #0a0a0a;
+        --white: #ffffff;
+        --gray: #1a1a1a;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--black);
+        color: var(--white);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", serif;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(10, 10, 10, 0.85) 0%,
+            rgba(26, 26, 26, 0.9) 100%
+          ),
+          url("roberta.img/roberta-copia.jpeg") center / cover;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 30% 50%,
+          rgba(201, 169, 97, 0.15) 0%,
+          transparent 50%
+        );
+        animation: float 8s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(30px, 30px) scale(1.1);
+        }
+      }
+
+      .hero-content {
+        text-align: center;
+        z-index: 2;
+        padding: 40px;
+        max-width: 1200px;
+      }
+
+      .logo {
+        width: 140px; /* pode aumentar se quiser */
+        height: auto;
+        margin-bottom: 40px;
+
+        opacity: 0;
+        animation: fadeInDown 1s forwards;
+
+        /* deixa mais visível */
+        filter: brightness(1.25) contrast(1.2)
+          drop-shadow(0 8px 18px rgba(0, 0, 0, 0.55))
+          drop-shadow(0 0 18px rgba(201, 169, 97, 0.35));
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 10px;
+        opacity: 0;
+        animation: fadeInUp 1s 0.3s forwards;
+      }
+
+      .hero h1 .highlight {
+        color: var(--gold);
+        font-weight: 700;
+        display: block;
+        font-size: 4.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.1rem;
+        color: #999;
+        margin-bottom: 15px;
+        opacity: 0;
+        animation: fadeInUp 1s 0.5s forwards;
+      }
+
+      .hero p {
+        font-size: 1.4rem;
+        color: #cccccc;
+        margin-bottom: 20px;
+        font-weight: 300;
+        opacity: 0;
+        animation: fadeInUp 1s 0.6s forwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .video-container {
+        max-width: 800px;
+        margin: 30px auto 30px;
+        padding: 0 20px;
+        opacity: 0;
+        animation: fadeInUp 1s 0.8s forwards;
+      }
+
+      .drive-video {
+        position: relative;
+        padding-top: 56.25%;
+        overflow: hidden;
+        border-radius: 15px;
+        border: 2px solid var(--gold);
+        background: linear-gradient(135deg, var(--gray) 0%, #2a2a2a 100%);
+      }
+
+      .drive-video iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-caption {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #999;
+        margin-top: 15px;
+        font-style: italic;
+      }
+
+      /* CTA – menor, centralizado, responsivo */
+      .cta-button {
+        display: block;
+        width: min(92%, 340px);
+        margin: 24px auto 0;
+        padding: 14px 22px;
+        font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+        font-weight: 600;
+        border-radius: 9999px;
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          var(--gold-dark) 100%
+        );
+        color: var(--black);
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          filter 0.25s ease;
+        animation: ctaPulse 1.8s ease-in-out infinite;
+      }
+
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        left: -120%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .cta-button:hover::before {
+        left: 120%;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 10px 26px rgba(201, 169, 97, 0.35);
+        filter: saturate(1.04);
+      }
+
+      @keyframes ctaPulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(201, 169, 97, 0);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 0 22px rgba(201, 169, 97, 0.28);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .cta-button {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .cta-button {
+          width: min(94%, 320px);
+          padding: 13px 20px;
+        }
+      }
+      @media (max-width: 640px) {
+        .cta-button {
+          width: min(94%, 300px);
+          padding: 12px 18px;
+        }
+      }
+      @media (max-width: 400px) {
+        .cta-button {
+          width: min(94%, 260px);
+          padding: 11px 16px;
+        }
+      }
+
+      /* Section Styles */
+      section {
+        padding: 100px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h2 {
+        font-size: 3.5rem;
+        text-align: center;
+        margin-bottom: 60px;
+        color: var(--gold);
+        font-weight: 300;
+      }
+
+      /* Problem Section */
+      .problem-section {
+        background: var(--gray);
+        text-align: center;
+      }
+
+      .problem-section h2 {
+        font-size: 3rem;
+        line-height: 1.3;
+        font-weight: 400;
+        color: var(--white);
+        margin-bottom: 40px;
+      }
+
+      .problem-section p {
+        font-size: 1.2rem;
+        line-height: 1.9;
+        color: #cccccc;
+        max-width: 900px;
+        margin: 0 auto 25px;
+      }
+
+      /* Solution Section */
+      .solution-section {
+        background: var(--black);
+        text-align: center;
+      }
+
+      .solution-section h2 {
+        font-size: 3.2rem;
+        line-height: 1.3;
+        font-weight: 400;
+        margin-bottom: 40px;
+      }
+
+      .solution-section p {
+        font-size: 1.3rem;
+        line-height: 1.9;
+        color: #cccccc;
+        max-width: 900px;
+        margin: 0 auto 25px;
+      }
+
+      /* Course Content */
+      .course-content {
+        background: var(--gray);
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 60px;
+      }
+
+      .content-card {
+        background: var(--black);
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid rgba(201, 169, 97, 0.2);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .content-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.5s ease;
+      }
+
+      .content-card::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(201, 169, 97, 0.15) 0%,
+          transparent 70%
+        );
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s ease,
+          height 0.6s ease;
+      }
+
+      .content-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .content-card:hover::after {
+        width: 500px;
+        height: 500px;
+      }
+
+      .content-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 30px 60px rgba(201, 169, 97, 0.3);
+        border-color: var(--gold);
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      }
+
+      .content-card h3 {
+        font-size: 1.5rem;
+        color: var(--gold);
+        margin-bottom: 15px;
+        line-height: 1.3;
+        position: relative;
+        z-index: 2;
+        transition:
+          color 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .content-card:hover h3 {
+        color: #e0c179;
+        transform: translateX(10px);
+      }
+
+      .content-card p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #cccccc;
+        position: relative;
+        z-index: 2;
+        transition: color 0.3s ease;
+      }
+
+      .content-card:hover p {
+        color: #ffffff;
+      }
+
+      /* Bonus Section */
+      .bonus-section {
+        background: var(--black);
+      }
+
+      .bonus-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .bonus-card {
+        background: linear-gradient(135deg, var(--gray) 0%, #2a2a2a 100%);
+        padding: 70px 40px 40px 40px;
+        border-radius: 20px;
+        border: 2px solid var(--gold);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+      }
+
+      .bonus-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 169, 97, 0.1),
+          transparent
+        );
+        transition: left 0.8s ease;
+      }
+
+      .bonus-card:hover::before {
+        left: 100%;
+      }
+
+      .bonus-card:hover {
+        transform: scale(1.05) translateY(-10px);
+        box-shadow: 0 30px 60px rgba(201, 169, 97, 0.4);
+        border-color: #e0c179;
+      }
+
+      .bonus-badge {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          var(--gold-dark) 100%
+        );
+        color: var(--black);
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        box-shadow: 0 5px 15px rgba(201, 169, 97, 0.4);
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+
+      .bonus-card:hover .bonus-badge {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(201, 169, 97, 0.6);
+      }
+
+      .bonus-card h3 {
+        font-size: 1.8rem;
+        color: var(--gold);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .bonus-card:hover h3 {
+        color: #e0c179;
+        transform: translateX(10px);
+      }
+
+      .bonus-card p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #cccccc;
+        transition: color 0.3s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .bonus-card:hover p {
+        color: #ffffff;
+      }
+
+      /* About Section */
+      .about-section {
+        background: var(--gray);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 60px;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .about-photo {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--gold);
+        box-shadow: 0 20px 60px rgba(201, 169, 97, 0.3);
+      }
+
+      .about-text h3 {
+        font-size: 2.5rem;
+        color: var(--gold);
+        margin-bottom: 30px;
+      }
+
+      .about-text p {
+        font-size: 1.1rem;
+        line-height: 1.9;
+        color: #cccccc;
+        margin-bottom: 20px;
+      }
+
+      .quote-box {
+        background: var(--black);
+        padding: 30px;
+        border-left: 4px solid var(--gold);
+        border-radius: 10px;
+        margin-top: 40px;
+      }
+
+      .quote-box p {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: var(--white);
+        line-height: 1.7;
+      }
+
+      .quote-box .author {
+        text-align: right;
+        color: var(--gold);
+        margin-top: 15px;
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        background: var(--black);
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 35px;
+        margin-top: 60px;
+      }
+
+      .testimonial-card {
+        background: linear-gradient(135deg, var(--gray) 0%, #1f1f1f 100%);
+        padding: 40px;
+        border-radius: 20px;
+        border: 1px solid #c9a96133;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+      }
+
+      .testimonial-card::before {
+        content: "“";
+        position: absolute;
+        top: 20px;
+        left: 25px;
+        font-size: 5rem;
+        color: var(--gold);
+        opacity: 0.2;
+        font-family: "Cormorant Garamond", serif;
+        line-height: 1;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(201, 169, 97, 0.25);
+        border-color: var(--gold);
+      }
+
+      .stars {
+        color: var(--gold);
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .testimonial-text {
+        position: relative;
+        z-index: 2;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #e0e0e0;
+        margin-bottom: 25px;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 25px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(201, 169, 97, 0.2);
+      }
+
+      .author-photo {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        object-fit: cover;
+      }
+
+      .author-info {
+        flex: 1;
+      }
+
+      .author-name {
+        font-weight: 600;
+        color: var(--gold);
+        font-size: 1.05rem;
+        margin-bottom: 3px;
+      }
+
+      .author-title {
+        font-size: 0.9rem;
+        color: #999;
+      }
+
+      /* Pricing Section */
+      .pricing-section {
+        background: var(--black);
+        text-align: center;
+      }
+
+      .pricing-section h2 {
+        font-size: 3rem;
+        line-height: 1.3;
+        margin-bottom: 30px;
+      }
+
+      .pricing-section .subtitle {
+        font-size: 1.3rem;
+        color: #cccccc;
+        margin-bottom: 60px;
+      }
+
+      .pricing-box {
+        background: linear-gradient(135deg, var(--gray) 0%, #2a2a2a 100%);
+        border: 3px solid var(--gold);
+        border-radius: 30px;
+        padding: 60px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .price-tag {
+        margin-bottom: 40px;
+      }
+
+      .price-installment {
+        font-size: 1.2rem;
+        color: #999;
+        margin-bottom: 10px;
+      }
+
+      .price-installment .big {
+        font-size: 3.5rem;
+        color: var(--gold);
+        font-weight: bold;
+        display: block;
+        margin: 10px 0;
+      }
+
+      .price-cash {
+        font-size: 1.8rem;
+        color: var(--white);
+        margin-top: 20px;
+      }
+
+      .price-cash strong {
+        color: var(--gold);
+        font-size: 2rem;
+      }
+
+      .benefits-list {
+        list-style: none;
+        margin: 40px 0;
+        text-align: left;
+      }
+
+      .benefits-list li {
+        padding: 15px 0;
+        font-size: 1.1rem;
+        color: #cccccc;
+        position: relative;
+        padding-left: 35px;
+      }
+
+      .benefits-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--gold);
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      /* Hands On Section */
+      .handson-section {
+        background: var(--gray);
+        text-align: center;
+      }
+
+      .handson-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .handson-content h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+      }
+
+      .handson-content p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #cccccc;
+        margin-bottom: 30px;
+      }
+
+      .handson-features {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin: 40px 0;
+        flex-wrap: wrap;
+      }
+
+      .handson-feature {
+        font-size: 1.1rem;
+        color: var(--gold);
+      }
+
+      .handson-note {
+        font-size: 0.95rem;
+        color: #999;
+        font-style: italic;
+        margin-top: 30px;
+      }
+
+      .cta-secondary {
+        display: inline-block;
+        padding: 18px 50px;
+        background: transparent;
+        color: var(--gold);
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: 2px solid var(--gold);
+        border-radius: 50px;
+        transition: all 0.4s ease;
+        margin-top: 20px;
+      }
+
+      .cta-secondary:hover {
+        background: var(--gold);
+        color: var(--black);
+        transform: translateY(-3px);
+      }
+
+      /* Purchase Notification */
+      .purchase-notification {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        backdrop-filter: blur(10px);
+        padding: 20px 25px;
+        border-radius: 20px;
+        border: 1px solid var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        z-index: 1000;
+        box-shadow:
+          0 15px 45px rgba(0, 0, 0, 0.6),
+          0 0 30px rgba(201, 169, 97, 0.2);
+        transform: translateX(-450px);
+        transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        max-width: 380px;
+      }
+
+      .purchase-notification.show {
+        transform: translateX(0);
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow:
+            0 15px 45px rgba(0, 0, 0, 0.6),
+            0 0 30px rgba(201, 169, 97, 0.2);
+        }
+        50% {
+          box-shadow:
+            0 15px 45px rgba(0, 0, 0, 0.8),
+            0 0 40px rgba(201, 169, 97, 0.4);
+        }
+      }
+
+      .notification-icon {
+        width: 55px;
+        height: 55px;
+        background: linear-gradient(
+          135deg,
+          var(--gold) 0%,
+          var(--gold-dark) 100%
+        );
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        box-shadow: 0 5px 20px rgba(201, 169, 97, 0.5);
+        flex-shrink: 0;
+        animation: iconPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes iconPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .notification-content {
+        flex: 1;
+      }
+
+      .notification-text {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .notification-text strong {
+        color: var(--gold);
+        font-weight: 600;
+        font-size: 1.05rem;
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .notification-text small {
+        color: #999;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .notification-time {
+        color: var(--gold);
+        font-size: 0.8rem;
+        margin-top: 5px;
+        display: block;
+        font-style: italic;
+      }
+
+      .notification-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: #00ff88;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 3px solid var(--gray);
+        animation: badgePulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes badgePulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.8;
+        }
+      }
+
+      /* Carrossel de depoimentos */
+      .testimonials-section .carousel {
+        --gap: 24px;
+        --per-view: 3;
+        position: relative;
+        max-width: 1200px;
+        margin: 60px auto 0;
+        padding: 0 48px;
+        overflow: visible;
+        isolation: isolate;
+      }
+
+      .testimonials-section .carousel-viewport {
+        overflow: hidden;
+        border-radius: 20px;
+        padding: 10px 0;
+      }
+
+      .testimonials-section .carousel-track {
+        display: flex;
+        gap: var(--gap);
+        transition: transform 0.8s ease;
+        will-change: transform;
+      }
+
+      .testimonials-section .testimonial-card {
+        min-width: calc(
+          (100% - (var(--gap) * (var(--per-view) - 1))) / var(--per-view)
+        );
+        margin: 0;
+      }
+
+      .testimonials-section .cbtn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid var(--gold);
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);
+        color: var(--gold);
+        font-size: 2rem;
+        display: none;
+        place-items: center;
+        cursor: pointer;
+        z-index: 2;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s,
+          background 0.2s,
+          color 0.2s;
+      }
+
+      .testimonials-section .carousel.is-ready .cbtn {
+        display: grid;
+      }
+
+      .testimonials-section .cbtn:hover {
+        background: var(--gold);
+        color: var(--black);
+        box-shadow: 0 8px 24px rgba(201, 169, 97, 0.35);
+      }
+
+      .testimonials-section .cbtn.prev {
+        left: -28px;
+      }
+
+      .testimonials-section .cbtn.next {
+        right: -28px;
+      }
+
+      .testimonials-section .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .testimonials-section .carousel-dots button {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: none;
+        background: #666;
+        opacity: 0.6;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          opacity 0.2s ease;
+      }
+
+      .testimonials-section .carousel-dots button.is-active {
+        background: var(--gold);
+        opacity: 1;
+        transform: scale(1.15);
+      }
+
+      /* Botão flutuante WhatsApp */
+      .whatsapp-float {
+        position: fixed;
+        width: 65px;
+        height: 65px;
+        bottom: 25px;
+        right: 25px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        animation: pulse 2.5s infinite;
+      }
+
+      .whatsapp-float img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+      }
+
+      /* Responsividade */
+      @media (max-width: 1024px) {
+        section {
+          padding: 80px 20px;
+        }
+
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .hero h1 .highlight {
+          font-size: 3.5rem;
+        }
+
+        .about-content {
+          gap: 40px;
+        }
+
+        h2 {
+          font-size: 3rem;
+        }
+
+        .testimonials-section .carousel {
+          --per-view: 2;
+          padding: 0 40px;
+        }
+
+        .testimonials-section .cbtn.prev {
+          left: 6px;
+        }
+
+        .testimonials-section .cbtn.next {
+          right: 6px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        section {
+          padding: 60px 15px;
+        }
+
+        .hero {
+          min-height: 100vh;
+          padding: 20px 10px;
+        }
+
+        .hero-content {
+          padding: 20px 10px;
+          width: 100%;
+        }
+
+        .logo {
+          width: 80px;
+          margin-bottom: 30px;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+          margin-bottom: 15px;
+          padding: 0 10px;
+        }
+
+        .hero h1 .highlight {
+          font-size: 2.3rem;
+        }
+
+        .hero .subtitle {
+          font-size: 0.95rem;
+          padding: 0 10px;
+        }
+
+        .hero p {
+          font-size: 1rem;
+          margin-bottom: 15px;
+          padding: 0 10px;
+        }
+
+        .video-container {
+          max-width: 100%;
+          padding: 0 15px;
+          margin: 20px auto 25px;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .about-photo {
+          width: 200px;
+          height: 200px;
+          margin: 0 auto;
+        }
+
+        .content-grid,
+        .bonus-grid,
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .content-card,
+        .bonus-card,
+        .testimonial-card {
+          padding: 30px;
+        }
+
+        .bonus-card {
+          padding: 60px 30px 30px 30px;
+        }
+
+        h2 {
+          font-size: 2.2rem;
+          margin-bottom: 40px;
+        }
+
+        .problem-section h2,
+        .solution-section h2 {
+          font-size: 2rem;
+        }
+
+        .problem-section p,
+        .solution-section p {
+          font-size: 1.1rem;
+        }
+
+        .pricing-box {
+          padding: 40px 25px;
+        }
+
+        .price-installment .big {
+          font-size: 2.5rem;
+        }
+
+        .handson-features {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .purchase-notification {
+          left: 10px;
+          right: 10px;
+          bottom: 10px;
+          padding: 15px 20px;
+          font-size: 0.9rem;
+        }
+
+        .notification-icon {
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+        }
+
+        .testimonials-section .carousel {
+          --per-view: 1;
+          padding: 0 28px;
+        }
+
+        .testimonials-section .cbtn {
+          width: 42px;
+          height: 42px;
+          font-size: 1.6rem;
+        }
+
+        .testimonials-section .cbtn.prev {
+          left: 4px;
+        }
+
+        .testimonials-section .cbtn.next {
+          right: 4px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.7rem;
+          padding: 0 5px;
+        }
+
+        .hero h1 .highlight {
+          font-size: 2rem;
+        }
+
+        .hero .subtitle {
+          font-size: 0.9rem;
+        }
+
+        .hero p {
+          font-size: 0.95rem;
+          padding: 0 5px;
+        }
+
+        .video-container {
+          padding: 0 10px;
+        }
+
+        h2 {
+          font-size: 1.9rem;
+        }
+
+        .content-card h3 {
+          font-size: 1.3rem;
+        }
+
+        .bonus-card h3 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .hero h1 {
+          font-size: 1.5rem;
+        }
+
+        .hero h1 .highlight {
+          font-size: 1.8rem;
+        }
+
+        .logo {
+          width: 70px;
+        }
+
+        h2 {
+          font-size: 1.7rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <svg
+          class="logo"
+          viewBox="0 0 200 200"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M60 40 Q60 30 70 30 L90 30 Q100 30 100 40 L100 80 Q100 90 90 90 L70 90 Q60 90 60 80 Z"
+            fill="none"
+            stroke="#c9a961"
+            stroke-width="4"
+          />
+          <path
+            d="M70 90 Q80 120 80 150"
+            fill="none"
+            stroke="#c9a961"
+            stroke-width="4"
+          />
+          <ellipse
+            cx="80"
+            cy="170"
+            rx="30"
+            ry="15"
+            fill="none"
+            stroke="#c9a961"
+            stroke-width="4"
+          />
+        </svg>
+
+        <h1>
+          CURSO ONLINE<br />
+          <span class="highlight">ULTRASSOM TRANSVAGINAL</span>
+        </h1>
+        <p class="subtitle">Do Básico ao Diagnóstico Avançado</p>
+        <p>com Dra. Roberta Severiano</p>
+        <p style="font-size: 1.2rem; margin-top: 20px">
+          Aprenda a dominar o exame que mais transforma o diagnóstico da mulher.
+        </p>
+
+        <!-- Vídeo Google Drive -->
+        <div class="video-container">
+          <div class="drive-video">
+            <iframe
+              src="https://drive.google.com/file/d/1KqR-MzpOznUncscnQFmDEIdN_60dIIgL/preview"
+              allow="autoplay"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="video-caption">
+            Clique no play e ative o som para assistir à aula introdutória.
+          </p>
+        </div>
+
+        <!-- CTA principal -->
+        <a
+          href="https://pay.hotmart.com/J102594959J"
+          class="cta-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          QUERO FAZER O CURSO AGORA
+        </a>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section">
+      <h2>
+        Você estudou medicina, mas ninguém te ensinou a ver o que importa.
+      </h2>
+      <p>
+        Você sabe reconhecer um útero, um ovário, uma imagem…<br />
+        Mas e quando o exame mostra algo que não se encaixa no padrão?
+      </p>
+
+      <p>
+        A maioria dos cursos ensina técnica, não raciocínio.<br />
+        Mostram imagens, mas não o olhar clínico.
+      </p>
+
+      <p>
+        <strong>O resultado?</strong><br />
+        Médicos inseguros, laudos genéricos e diagnósticos que poderiam ter sido
+        feitos antes —<br />
+        se alguém tivesse ensinado o porquê de cada detalhe na tela.
+      </p>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section">
+      <h2>
+        O ultrassom transvaginal não é um exame.<br />
+        É uma extensão do raciocínio clínico.
+      </h2>
+
+      <p>
+        Quando você domina essa linguagem,<br />
+        deixa de depender de laudos prontos e passa a enxergar o que ninguém
+        mais vê.
+      </p>
+
+      <p>
+        Cada imagem deixa de ser um mistério,<br />
+        e passa a ser uma história que o corpo da paciente está tentando te
+        contar.
+      </p>
+    </section>
+
+    <!-- Course Content -->
+    <section class="course-content">
+      <h2>O Que Você Vai Aprender</h2>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>
+            1. Ultrassonografia Transvaginal – Desvendando os Conceitos Básicos
+          </h3>
+          <p>
+            Fundamentos técnicos, ajustes de imagem e princípios que diferenciam
+            um exame comum de um diagnóstico seguro.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>2. O Passo a Passo do Ultrassom Transvaginal</h3>
+          <p>
+            Protocolo completo, posicionamento do transdutor e manobras ideais —
+            do início ao fim do exame.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>3. Avaliação dos Fórnices Vaginais</h3>
+          <p>O ponto cego que pode mudar todo o diagnóstico.</p>
+        </div>
+        <div class="content-card">
+          <h3>4. Avaliação Uterina</h3>
+          <p>
+            Descrição correta de forma, posição e textura; reconhecimento de
+            miomas, adenomiose e variações anatômicas.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>5. Avaliação do Endométrio</h3>
+          <p>
+            Interpretação fisiológica e patológica conforme fase do ciclo,
+            reposição hormonal e fertilidade.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>6. Avaliação de Dispositivo Intrauterino (DIU)</h3>
+          <p>
+            Diagnóstico de posicionamento normal, deslocamentos e complicações.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>7. Avaliação dos Ovários</h3>
+          <p>
+            Padrão folicular, SOP, cistos e lesões anexiais — leitura segura e
+            objetiva.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>8. Doença Inflamatória Pélvica (DIP)</h3>
+          <p>Sinais diretos e indiretos, complicações e correlação clínica.</p>
+        </div>
+        <div class="content-card">
+          <h3>9. Ultrassonografia Obstétrica por Via Transvaginal</h3>
+          <p>
+            Identificação de saco gestacional, embrião, batimentos cardíacos e
+            intercorrências precoces.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bonus Section -->
+    <section class="bonus-section">
+      <h2>Bônus Exclusivos</h2>
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <span class="bonus-badge">BÔNUS 1</span>
+          <h3>Laudário Completo e Atualizado</h3>
+          <p>
+            Todos os modelos de laudos prontos para uso — ginecológicos,
+            obstétricos e especializados — baseados nos consensos mais atuais.
+          </p>
+        </div>
+        <div class="bonus-card">
+          <span class="bonus-badge">BÔNUS 2</span>
+          <h3>Curso de Ultrassom Transvaginal na Pesquisa de Endometriose</h3>
+          <p>
+            O passo a passo para identificar lesões profundas e se tornar
+            referência em imagem da mulher.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <h2>Sobre a Professora</h2>
+      <div class="about-content">
+        <img
+          src="roberta.img/roberta2.jpg"
+          alt="Dra. Roberta Severiano"
+          class="about-photo"
+        />
+        <div class="about-text">
+          <h3>Eu serei a sua professora.</h3>
+          <p>Aqui é a Dra. Roberta Severiano.</p>
+          <p>
+            Sou médica e carrego comigo uma missão clara: transformar vidas por
+            meio de informação acessível, objetiva e baseada em ciência.
+          </p>
+          <p>
+            Sou Mestre em Saúde da Mulher, com pós-graduação em Ginecologia
+            Clínica, Membro Titular do Colégio Brasileiro de Radiologia e da
+            Sociedade Brasileira de Ultrassonografia.
+          </p>
+          <p>
+            Dediquei minha carreira à imagem da mulher, unindo raciocínio
+            clínico e prática em ultrassonografia.
+          </p>
+          <p>
+            Mas este curso nasceu de uma frustração: depois de anos fazendo
+            cursos, percebi que nenhum ensinava o que realmente importa. Falavam
+            de técnica, mas não de raciocínio. Mostravam imagens, mas não o
+            olhar.
+          </p>
+          <p>
+            Por isso, criei este método — para ensinar o que nunca me ensinaram:
+            como enxergar o ultrassom como uma linguagem, e não apenas como uma
+            imagem.
+          </p>
+
+          <div class="quote-box">
+            <p>
+              "Porque o ultrassom transvaginal não é só um exame. É uma
+              linguagem — e quando você aprende a interpretá-la, o seu olhar
+              nunca mais é o mesmo."
+            </p>
+            <p class="author">— Dra. Roberta Severiano</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <h2>O Que Dizem os Alunos</h2>
+
+      <div class="carousel" id="testiCarousel">
+        <button class="cbtn prev" aria-label="Anterior">‹</button>
+
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <!-- CARD 1 -->
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">
+                "O curso me fez enxergar o ultrassom de outra forma. A Dra.
+                Roberta explica cada detalhe com clareza e propósito — não é só
+                técnica, é raciocínio clínico de verdade."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=100&h=100&fit=crop"
+                  class="author-photo"
+                  alt="Dra. Amanda Costa"
+                />
+                <div class="author-info">
+                  <div class="author-name">Dra. Amanda Costa</div>
+                  <div class="author-title">Ginecologista – São Paulo, SP</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Depois de anos atuando com ultrassom, esse curso foi o único
+                que realmente me ensinou a pensar. Hoje laudo com muito mais
+                segurança e confiança."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop"
+                  class="author-photo"
+                  alt="Dra. Juliana Martins"
+                />
+                <div class="author-info">
+                  <div class="author-name">Dra. Juliana Martins</div>
+                  <div class="author-title">
+                    Radiologista – Rio de Janeiro, RJ
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">
+                "A didática da Dra. Roberta é impecável. Consegui aplicar tudo
+                já na primeira semana. Cada módulo é uma virada de chave!"
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=100&h=100&fit=crop"
+                  class="author-photo"
+                  alt="Dra. Patrícia Almeida"
+                />
+                <div class="author-info">
+                  <div class="author-name">Dra. Patrícia Almeida</div>
+                  <div class="author-title">Clínica Geral – Brasília, DF</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">
+                "O módulo sobre endometriose mudou completamente minha prática.
+                Hoje sou referência em imagem pélvica na minha região."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop"
+                  class="author-photo"
+                  alt="Dra. Fernanda Lima"
+                />
+                <div class="author-info">
+                  <div class="author-name">Dra. Fernanda Lima</div>
+                  <div class="author-title">
+                    Ultrassonografista – Fortaleza, CE
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Nunca vi um curso tão completo. O conteúdo é técnico, mas
+                humano. A forma como a Dra. Roberta ensina faz a gente realmente
+                entender o porquê de cada achado."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&h=100&fit=crop"
+                  class="author-photo"
+                  alt="Dra. Beatriz Santos"
+                />
+                <div class="author-info">
+                  <div class="author-name">Dra. Beatriz Santos</div>
+                  <div class="author-title">
+                    Ginecologista – Belo Horizonte, MG
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Eu já tinha feito outros cursos, mas nenhum com essa
+                profundidade. Agora tenho segurança pra interpretar achados
+                complexos e conduzir melhor meus pacientes."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
+                  class="author-photo"
+                  alt="Dr. Marcelo Ribeiro"
+                />
+                <div class="author-info">
+                  <div class="author-name">Dr. Marcelo Ribeiro</div>
+                  <div class="author-title">Ginecologista – Curitiba, PR</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 7 -->
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">
+                "O curso é incrível! Já recomendei para vários colegas. A
+                qualidade do conteúdo e a didática são impecáveis. É um divisor
+                de águas na carreira médica."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1550525811-e5869dd03032?w=100&h=100&fit=crop"
+                  class="author-photo"
+                  alt="Dra. Renata Vasconcelos"
+                />
+                <div class="author-info">
+                  <div class="author-name">Dra. Renata Vasconcelos</div>
+                  <div class="author-title">Ginecologista – Goiânia, GO</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 8 -->
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p class="testimonial-text">
+                "Me apaixonei novamente pela ultrassonografia depois desse
+                curso. A forma como a Dra. Roberta aborda os casos é inspiradora
+                — ela realmente ensina a pensar."
+              </p>
+              <div class="testimonial-author">
+                <img
+                  src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=100&h=100&fit=crop"
+                  class="author-photo"
+                  alt="Dr. Francisco Monteiro"
+                />
+                <div class="author-info">
+                  <div class="author-name">Dr. Francisco Monteiro</div>
+                  <div class="author-title">
+                    Ginecologista – Florianópolis, SC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.carousel-track -->
+        </div>
+        <!-- /.carousel-viewport -->
+
+        <button class="cbtn next" aria-label="Próximo">›</button>
+        <div class="carousel-dots" aria-label="Seleção de slide"></div>
+      </div>
+      <!-- /#testiCarousel -->
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="comprar">
+      <h2>
+        Chegou a hora de dominar o exame que diferencia<br />o médico comum do
+        especialista completo.
+      </h2>
+      <p class="subtitle">
+        Curso de Ultrassom Transvaginal — Do Básico ao Diagnóstico Avançado<br />
+        Aulas gravadas (12 meses de acesso) + 3 meses de mentoria online ao
+        vivo.
+      </p>
+
+      <div class="pricing-box">
+        <div class="price-tag">
+          <p class="price-installment">
+            12x de
+            <span class="big">R$ 134,14</span>
+            no cartão
+          </p>
+          <p class="price-cash">
+            ou <strong>R$1.297,00</strong> à vista<br />
+            <small style="color: #999">(cartão, boleto, pix)</small>
+          </p>
+        </div>
+
+        <ul class="benefits-list">
+          <li>Acesso por 12 meses</li>
+          <li>
+            Mentoria online mensal (3 meses) para discussão de casos e dúvidas
+            reais
+          </li>
+          <li>Certificado de conclusão</li>
+        </ul>
+
+        <a
+          href="https://pay.hotmart.com/J102594959J"
+          class="cta-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          QUERO FAZER O CURSO AGORA
+        </a>
+      </div>
+    </section>
+
+    <!-- Hands On Section -->
+    <section class="handson-section">
+      <div class="handson-content">
+        <h2>E para quem quiser viver a experiência completa...</h2>
+
+        <p>
+          Após concluir o curso online, você poderá participar do
+          <strong style="color: var(--gold)"
+            >Hands On Presencial em Fortaleza</strong
+          >
+          — 2 dias de prática intensiva, aplicando tudo o que aprendeu em
+          pacientes reais, sob supervisão direta da Dra. Roberta Severiano.
+        </p>
+
+        <div class="handson-features">
+          <div class="handson-feature">🎯 Treinamento individualizado</div>
+          <div class="handson-feature">📍 Vagas limitadas</div>
+          <div class="handson-feature">
+            💬 Turmas para alunos do curso online
+          </div>
+        </div>
+
+        <p class="handson-note">
+          (O Hands On é um curso independente, não incluso no valor do curso
+          online.)
+        </p>
+        <a
+          href="https://wa.me/558592933993?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Hands%20On%20Presencial"
+          target="_blank"
+          class="cta-secondary"
+          rel="noopener noreferrer"
+        >
+          QUERO SABER MAIS SOBRE O HANDS ON
+        </a>
+      </div>
+    </section>
+
+    <!-- Purchase Notification -->
+    <div class="purchase-notification" id="notification">
+      <div class="notification-badge"></div>
+      <div class="notification-icon">✓</div>
+      <div class="notification-content">
+        <div class="notification-text">
+          <strong id="buyerName"></strong>
+          <small>📍 <span id="buyerLocation"></span></small>
+          <span class="notification-time" id="buyerTime"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a
+      href="https://wa.me/558592933993?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Hands%20On%20Presencial"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+      />
+    </a>
+
+    <script>
+      // Purchase Notifications
+      const buyers = [
+        { name: "Dra. Maria Santos", location: "São Paulo, SP" },
+        { name: "Dra. Paula Oliveira", location: "Rio de Janeiro, RJ" },
+        { name: "Dra. Claudia Ferreira", location: "Brasília, DF" },
+        { name: "Dra. Renata Costa", location: "Curitiba, PR" },
+        { name: "Dra. Beatriz Lima", location: "Salvador, BA" },
+        { name: "Dra. Camila Souza", location: "Fortaleza, CE" },
+        { name: "Dra. Larissa Almeida", location: "Belo Horizonte, MG" },
+        { name: "Dra. Jessica Rodrigues", location: "Manaus, AM" },
+        { name: "Dra. Ana Carolina Silva", location: "Porto Alegre, RS" },
+        { name: "Dra. Fernanda Costa", location: "Recife, PE" },
+      ];
+
+      function showPurchaseNotification() {
+        const notification = document.getElementById("notification");
+        const randomBuyer = buyers[Math.floor(Math.random() * buyers.length)];
+
+        const timeOptions = [
+          "Agora mesmo",
+          "Há 2 minutos",
+          "Há 5 minutos",
+          "Há 8 minutos",
+          "Há 12 minutos",
+        ];
+        const randomTime =
+          timeOptions[Math.floor(Math.random() * timeOptions.length)];
+
+        document.getElementById("buyerName").textContent = randomBuyer.name;
+        document.getElementById("buyerLocation").textContent =
+          randomBuyer.location;
+        document.getElementById("buyerTime").textContent =
+          `${randomTime} • Curso completo adquirido`;
+
+        notification.classList.add("show");
+
+        setTimeout(() => {
+          notification.classList.remove("show");
+        }, 5000);
+      }
+
+      // Show notification every 8-15 seconds
+      function scheduleNextNotification() {
+        const delay = Math.random() * 7000 + 8000;
+        setTimeout(() => {
+          showPurchaseNotification();
+          scheduleNextNotification();
+        }, delay);
+      }
+
+      // Start notifications after 3 seconds
+      setTimeout(scheduleNextNotification, 3000);
+
+      // Smooth scroll para âncoras internas
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href === "#" || href === "") return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      // CARROSSEL DE DEPOIMENTOS
+      (function () {
+        const root = document.getElementById("testiCarousel");
+        if (!root) return;
+
+        const viewport = root.querySelector(".carousel-viewport");
+        const track = root.querySelector(".carousel-track");
+        const slides = Array.from(track.children);
+        const btnPrev = root.querySelector(".cbtn.prev");
+        const btnNext = root.querySelector(".cbtn.next");
+        const dotsBox = root.querySelector(".carousel-dots");
+
+        function perView() {
+          return (
+            parseInt(getComputedStyle(root).getPropertyValue("--per-view")) || 1
+          );
+        }
+
+        let pages = 1;
+        let active = 0;
+
+        function buildDots() {
+          dotsBox.innerHTML = "";
+          pages = Math.max(1, slides.length - perView() + 1);
+          for (let i = 0; i < pages; i++) {
+            const b = document.createElement("button");
+            if (i === active) b.classList.add("is-active");
+            b.addEventListener("click", () => goTo(i));
+            dotsBox.appendChild(b);
+          }
+        }
+
+        function updateDots() {
+          Array.from(dotsBox.children).forEach((b, i) => {
+            b.classList.toggle("is-active", i === active);
+          });
+        }
+
+        function goTo(i) {
+          const max = Math.max(0, slides.length - perView());
+          active = i < 0 ? max : i > max ? 0 : i;
+          const gap =
+            parseFloat(getComputedStyle(root).getPropertyValue("--gap")) || 0;
+          const slideWidth = slides[0].getBoundingClientRect().width + gap;
+          track.style.transform = `translateX(-${active * slideWidth}px)`;
+          updateDots();
+        }
+
+        btnPrev.addEventListener("click", () => goTo(active - 1));
+        btnNext.addEventListener("click", () => goTo(active + 1));
+
+        let timer = null;
+        function start() {
+          stop();
+          timer = setInterval(() => goTo(active + 1), 4000);
+        }
+        function stop() {
+          if (timer) clearInterval(timer);
+          timer = null;
+        }
+
+        root.addEventListener("mouseenter", stop);
+        root.addEventListener("mouseleave", start);
+        root.addEventListener("touchstart", stop, { passive: true });
+        root.addEventListener("touchend", start, { passive: true });
+
+        // Swipe
+        let x0 = null;
+        viewport.addEventListener(
+          "touchstart",
+          (e) => (x0 = e.touches[0].clientX),
+          { passive: true },
+        );
+        viewport.addEventListener(
+          "touchmove",
+          (e) => {
+            if (x0 == null) return;
+            const dx = e.touches[0].clientX - x0;
+            if (Math.abs(dx) > 50) {
+              goTo(active + (dx < 0 ? 1 : -1));
+              x0 = null;
+            }
+          },
+          { passive: true },
+        );
+        viewport.addEventListener("touchend", () => (x0 = null));
+
+        let rAF;
+        window.addEventListener("resize", () => {
+          cancelAnimationFrame(rAF);
+          rAF = requestAnimationFrame(() => {
+            buildDots();
+            goTo(active);
+          });
+        });
+
+        buildDots();
+        goTo(0);
+        root.classList.add("is-ready");
+        start();
+      })();
+    </script>
+
+    <!-- METAEDITS TRACKING (placeholder) -->
+    <script>
+      /*
+      (function(w,d,s,u){
+        var js = d.createElement(s);
+        js.src = u;
+        js.async = true;
+        d.head.appendChild(js);
+        js.onload = function() {
+          window.metaedits.init("SUA_CHAVE_DE_API_AQUI");
+          window.metaedits.track("page_view");
+        };
+      })(window, document, "script", "https://cdn.metaedits.com/sdk.js");
+      */
+    </script>
+  </body>
+</html>
